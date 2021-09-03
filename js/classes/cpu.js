@@ -5,7 +5,7 @@ class CPU {
         // loteria
 
     //clock em segundos
-    constructor({algoritimo = "roundRobin", fracaoCpu = 10, clock = 0.5}) {
+    constructor({algoritimo = "roundRobin", fracaoCpu = 10, clock = 1}) {
         this.algoritimo = algoritimo
         this.fracaoCpu = fracaoCpu
         this.clock = clock
@@ -19,6 +19,10 @@ class CPU {
         } catch (err) {
             console.error(err)
         }
+    }
+
+    randint() {
+        return Math.floor(Math.random() * 100)
     }
 
     roundRobin() {
