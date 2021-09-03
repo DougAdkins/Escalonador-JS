@@ -27,6 +27,7 @@ class CPU {
 
     roundRobin() {
         console.log("funcao circular")
+        
 
         console.log(this.listaProcessos)
 
@@ -47,6 +48,13 @@ class CPU {
 
     loteria() {
         console.log("funcao loteria")
+        console.log(this.randint())
+
+        let ticket = this.randint()
+
+        let processosFiltrados = this.listaProcessos.filter((processo) => {return processo.prioridade == ticket})
+
+        console.log(processosFiltrados)
     }
 
     addProcessos(processo) {
@@ -69,7 +77,7 @@ class CPU {
         let conteudo = ""
         this.listaProcessos.forEach(({PID, nome, tempoExecucao, status, qtdExecutada}) => {
             let porcentagemExecutada = qtdExecutada / tempoExecucao * 100
-            console.log(porcentagemExecutada)
+            //console.log(porcentagemExecutada)
             conteudo += `
                 <div class="d-flex" id="${PID}">
                     <div class=" col-2 nomeProcesso">${nome}</div>
